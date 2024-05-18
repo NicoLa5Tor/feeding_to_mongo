@@ -148,7 +148,7 @@ def concat_vulnerabilities_per_machin():
     machin_mas , machin_menos = 0,100000000000
     name_mas , name_menos = '',''
     #guscamos todos los datos
-    for i in range(17):
+    for i in range(19):
          if i > 0:
             id = f'VulnsPerMachines_{i}'
             print(id)
@@ -171,8 +171,8 @@ def concat_vulnerabilities_per_machin():
     ym = obj_db.search_db(id=name_menos)
     yma = obj_db.search_db(id=name_mas)
     
-    mas_menos ['menos_vuln'] = list(yma['response']['item'].keys())[0]
-    mas_menos ['mas_vuln'] = list(ym['response']['item'].keys())[0]
+    mas_menos ['menos_vuln'] = list(ym['response']['item'].keys())[0]
+    mas_menos ['mas_vuln'] = list(yma['response']['item'].keys())[0]
          
     for ord_name, ord_item in list(diccionario_ordenado.items())[:10]:
         awaitAnalisis = 0
@@ -192,7 +192,7 @@ def concat_vulnerabilities_per_machin():
              if  ite != 'No vulnerable':
                 for item in ite['Vulns']:              
              
-                    print('empieza la concatenacion el item')
+                 #   print('empieza la concatenacion el item')
                   #  print(item)
                     if len(item['cve']['metrics']) < 1:
                         awaitAnalisis += 1
